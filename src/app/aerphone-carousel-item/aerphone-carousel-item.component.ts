@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-aerphone-carousel-item',
@@ -9,4 +10,10 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 })
 export class AerphoneCarouselItemComponent {
   image = input.required<string>();
+
+  appComponent = inject(AppComponent);
+
+  onShowDetails(): void {
+    this.appComponent.onShowDetails();
+  }
 }

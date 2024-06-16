@@ -4,16 +4,25 @@
   left: 0;
   width: 70%;
   height: 100%;
+  font-size: 15px;
+  transition: left 0.5s, opacity 0.5s, width 0.5s;
 
-  img {
+  .image-wrapper {
     width: 50%;
     position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+
+    img {
+      object-fit: contain;
+      width: 100%;
+    }
   }
 
-  .intro {
+  .introduce {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -34,6 +43,7 @@
       font-size: small;
       color: #5559;
     }
+
     .see-more {
       font-family: Poppins;
       margin-top: 1.2em;
@@ -44,7 +54,9 @@
       font-weight: bold;
       letter-spacing: 3px;
       transition: background 0.5s;
+      cursor: pointer;
     }
+
     .see-more:hover {
       background: #eee;
     }
@@ -53,5 +65,53 @@
   .detail {
     opacity: 0;
     pointer-events: none;
+  }
+}
+
+.detail {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: right;
+  pointer-events: auto;
+
+  .title {
+    font-size: 4rem;
+  }
+
+  .specifications {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    width: 100%;
+    border-top: 1px solid #5553;
+    margin-top: 20px;
+
+    div {
+      width: 90px;
+      text-align: center;
+      flex-shrink: 0;
+
+      p:nth-child(1) {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .checkout button {
+    font-family: Poppins;
+    background-color: transparent;
+    border: 1px solid #5555;
+    margin-left: 5px;
+    padding: 5px 10px;
+    letter-spacing: 2px;
+    font-weight: 500;
+  }
+
+  .checkout button:nth-child(2) {
+    background-color: #693eff;
+    color: #eee;
   }
 }

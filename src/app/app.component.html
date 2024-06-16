@@ -8,18 +8,25 @@
 </header>
 
 <div class="carousel">
-  <div #carouselList class="list">
-    <app-aerphone-carousel-item image="images/img1.png" />
-    <app-aerphone-carousel-item image="images/img2.png" />
-    <app-aerphone-carousel-item image="images/img3.png" />
+  <div #carouselList class="carousel-list">
     <app-aerphone-carousel-item image="images/img4.png" />
     <app-aerphone-carousel-item image="images/img5.png" />
     <app-aerphone-carousel-item image="images/img6.png" />
+    <app-aerphone-carousel-item image="images/img1.png" />
+    <app-aerphone-carousel-item image="images/img2.png" />
+    <app-aerphone-carousel-item image="images/img3.png" />
+
+    <!-- <app-aerphone-carousel-item image="images/khang1.jpeg" />
+    <app-aerphone-carousel-item image="images/khang2.jpeg" />
+    <app-aerphone-carousel-item image="images/khang3.jpeg" />
+    <app-aerphone-carousel-item image="images/khang4.jpeg" />
+    <app-aerphone-carousel-item image="images/khang5.jpeg" />
+    <app-aerphone-carousel-item image="images/khang6.jpeg" /> -->
   </div>
 </div>
 
 <div class="arrows">
-  <button (click)="onPrev()" id="prev"><</button>
-  <button id="back">Go Back &#8599;</button>
-  <button (click)="onNext()" id="next">></button>
+  <button #prevButton (click)="onPrev()" id="prev"><</button>
+  <button id="back">See all &#8599;</button>
+  <button #nextButton (click)="onNext()" id="next">></button>
 </div>

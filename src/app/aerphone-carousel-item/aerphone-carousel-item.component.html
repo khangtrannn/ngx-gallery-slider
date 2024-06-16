@@ -1,13 +1,13 @@
-<img [src]="image()" />
-<div class="intro">
+<div class="image-wrapper">
+  <img [src]="image()" />
+</div>
+<div class="introduce">
   <div class="title">DESIGN SLIDER</div>
   <div class="topic">Aerphone</div>
   <div class="des">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nesciunt
-    amet dicta minima harum? Eum quaerat molestiae dolores expedita
-    consequatur?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, laborum cumque dignissimos quidem atque et eligendi aperiam voluptates beatae maxime.
   </div>
-  <button class="see-more">See more &#8599;</button>
+  <button (click)="onShowDetails()" class="see-more">SEE MORE &#8599;</button>
 </div>
 <div class="detail">
   <div class="title">Aerphone GHTK</div>
@@ -24,10 +24,6 @@
     <div>
       <p>Used Time</p>
       <p>6 hours</p>
-    </div>
-    <div>
-      <p>Charging port</p>
-      <p>Type-C</p>
     </div>
     <div>
       <p>Compatible</p>
