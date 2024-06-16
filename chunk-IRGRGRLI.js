@@ -1,0 +1,1 @@
+import"./chunk-LBML4K45.js";var o=[{path:"photo-gallery",loadComponent:async()=>(await import("./chunk-Y7UEK4TH.js")).PhotoGalleryComponent},{path:"aerphone",loadComponent:async()=>(await import("./chunk-KDCGNCRN.js")).AerphoneComponent},{path:"**",redirectTo:"photo-gallery"}];export{o as default};
