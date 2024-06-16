@@ -1,0 +1,11 @@
+<div [style.--slide-padding]="padding()" [class.gradient-background]="gradientBackground()" class="carousel">
+  <div #carouselList class="carousel-list">
+    <ng-content />
+  </div>
+</div>
+
+<div class="arrows">
+  <button #prevButton (click)="onPrev()" id="prev"><</button>
+  <button id="back" (click)="onSeeAll()">See All &#8599;</button>
+  <button #nextButton (click)="onNext()" id="next">></button>
+</div>
