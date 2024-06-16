@@ -1,0 +1,166 @@
+a {
+  text-decoration: none;
+  color: #555;
+}
+
+header {
+  width: 1140px;
+  max-width: 90%;
+  margin: auto;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+}
+
+header .logo {
+  font-weight: bold;
+}
+
+header nav a {
+  margin-left: 30px;
+}
+
+.carousel {
+  margin-top: -50px;
+  height: 800px;
+  overflow: hidden;
+  position: relative;
+
+  .list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1140px;
+    max-width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 80%;
+  }
+}
+
+.arrows {
+  position: absolute;
+  bottom: 10px;
+  width: 1140px;
+  max-width: 90%;
+  display: flex;
+  justify-content: space-between;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#prev,
+#next {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-family: monospace;
+  border: 1px solid #5555;
+  font-size: large;
+  bottom: 20%;
+  left: 10%;
+  cursor: pointer;
+}
+
+#next {
+  left: unset;
+  right: 10%;
+}
+
+#back {
+  position: absolute;
+  z-index: 100;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  border-bottom: 1px solid #555;
+  font-family: Poppins;
+  font-weight: bold;
+  letter-spacing: 3px;
+  background-color: transparent;
+  padding: 10px;
+  transition: opacity 0.5s;
+}
+
+:host ::ng-deep {
+  app-aerphone-carousel-item {
+    &:nth-child(2) {
+      transform: translate(0, 0);
+      filter: blur(0);
+      z-index: 10;
+      opacity: 1;
+
+      .intro {
+        opacity: 1;
+        pointer-events: auto;
+        transition: opacity 0.5s;
+      }
+
+      .title,
+      .topic,
+      .des,
+      .see-more {
+        opacity: 0;
+        animation: showContent 0.5s 1s ease-in-out 1 forwards;
+      }
+
+      .topic {
+        animation-delay: 1.2s;
+      }
+      .des {
+        animation-delay: 1.4s;
+      }
+      .see-more {
+        animation-delay: 1.6s;
+      }
+    }
+
+    &:nth-child(n + 6) {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &:nth-child(1) {
+      transform: var(--item1-transform);
+      filter: var(--item1-filter);
+      z-index: var(--item1-zIndex);
+      opacity: var(--item1-opacity);
+      pointer-events: none;
+    }
+
+    &:nth-child(3) {
+      transform: var(--item3-transform);
+      filter: var(--item3-filter);
+      z-index: var(--item3-zIndex);
+    }
+
+    &:nth-child(4) {
+      transform: var(--item4-transform);
+      filter: var(--item4-filter);
+      z-index: var(--item4-zIndex);
+    }
+
+    &:nth-child(5) {
+      transform: var(--item5-transform);
+      filter: var(--item5-filter);
+      opacity: var(--item5-opacity);
+      pointer-events: none;
+    }
+  }
+}
+
+@keyframes showContent {
+  from {
+    transform: translateY(-30px);
+    filter: blur(10px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}

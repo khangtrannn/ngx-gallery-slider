@@ -1,0 +1,57 @@
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+
+  img {
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .intro {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    opacity: 0;
+    pointer-events: none;
+
+    .title {
+      font-size: 2em;
+      font-weight: 500;
+      line-height: 1em;
+    }
+    .topic {
+      font-size: 4em;
+      font-weight: 500;
+    }
+    .des {
+      font-size: small;
+      color: #5559;
+    }
+    .see-more {
+      font-family: Poppins;
+      margin-top: 1.2em;
+      padding: 5px 0;
+      border: none;
+      border-bottom: 1px solid #555;
+      background-color: transparent;
+      font-weight: bold;
+      letter-spacing: 3px;
+      transition: background 0.5s;
+    }
+    .see-more:hover {
+      background: #eee;
+    }
+  }
+
+  .detail {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
