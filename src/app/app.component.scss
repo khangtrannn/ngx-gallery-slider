@@ -43,6 +43,25 @@ header nav a {
   }
 }
 
+.carousel::before {
+  width: 500px;
+  height: 300px;
+  content: "";
+  background-image: linear-gradient(70deg, #dc422a, blue);
+  position: absolute;
+  z-index: -1;
+  border-radius: 20% 30% 80% 10%;
+  filter: blur(150px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-10%, -50%);
+  transition: 1s;
+}
+.carousel:has(.show-details)::before {
+  transform: translate(-100%, -50%) rotate(90deg);
+  filter: blur(130px);
+}
+
 .arrows {
   position: absolute;
   bottom: 10px;
@@ -86,6 +105,7 @@ header nav a {
   background-color: transparent;
   padding: 10px;
   transition: opacity 0.5s;
+  cursor: pointer;
 }
 
 :host ::ng-deep {
@@ -104,24 +124,24 @@ header nav a {
         opacity: 1;
         pointer-events: auto;
         transition: opacity 0.5s;
-      }
 
-      .title,
-      .topic,
-      .des,
-      .see-more {
-        opacity: 0;
-        animation: showContent 0.5s 1s ease-in-out 1 forwards;
-      }
+        .title,
+        .topic,
+        .des,
+        .see-more {
+          opacity: 0;
+          animation: showContent 0.5s 1s ease-in-out 1 forwards;
+        }
 
-      .topic {
-        animation-delay: 1.2s;
-      }
-      .des {
-        animation-delay: 1.4s;
-      }
-      .see-more {
-        animation-delay: 1.6s;
+        .topic {
+          animation-delay: 1.2s;
+        }
+        .des {
+          animation-delay: 1.4s;
+        }
+        .see-more {
+          animation-delay: 1.6s;
+        }
       }
     }
 
@@ -201,6 +221,7 @@ header nav a {
   }
 }
 
+// Detail animation
 :host ::ng-deep {
   .carousel-list.show-details app-aerphone-carousel-item {
     &:nth-child(3),
@@ -220,13 +241,15 @@ header nav a {
 
       .image-wrapper {
         right: 50%;
-        // max-height: 100%;
       }
 
       .detail {
         opacity: 1;
 
-        .title, .des, .specifications, .checkout {
+        .title,
+        .des,
+        .specifications,
+        .checkout {
           opacity: 0;
           animation: showContent 0.5s 1s ease-in-out 1 forwards;
         }
@@ -296,5 +319,75 @@ header nav a {
     transform: var(--item5-transform);
     filter: var(--item5-filter);
     opacity: var(--item5-opacity);
+  }
+}
+
+:host ::ng-deep {
+  @media screen and (max-width: 991px) {
+    /* ipad, tablets */
+    app-aerphone-carousel-item {
+      width: 90%;
+    }
+
+    .carousel-list.show-details
+      app-aerphone-carousel-item:nth-child(2)
+      .detail {
+      .specifications {
+        overflow: auto;
+      }
+
+      .title {
+        font-size: 2em;
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    /* mobile */
+    .carousel {
+      height: 600px;
+    }
+
+    app-aerphone-carousel-item {
+      width: 100%;
+      font-size: 10px;
+    }
+
+    .carousel-list {
+      height: 100%;
+    }
+
+    app-aerphone-carousel-item:nth-child(2) .introduce {
+      width: 50%;
+    }
+
+    .carousel .image-wrapper {
+      width: 40%;
+    }
+
+    .carousel-list.show-details
+      app-aerphone-carousel-item:nth-child(2)
+      .detail {
+      backdrop-filter: blur(10px);
+      font-size: small;
+
+      .des {
+        height: 100px;
+        overflow: auto;
+      }
+
+      .checkout {
+        display: flex;
+        width: max-content;
+        float: right;
+      }
+    }
+
+    .carousel-list app-aerphone-carousel-item:nth-child(2) {
+      .introduce .des {
+        height: 100px;
+        overflow: auto;
+      }
+    }
   }
 }

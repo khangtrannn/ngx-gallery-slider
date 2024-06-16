@@ -34,6 +34,10 @@ export class AppComponent {
     this.#renderer.addClass(this.carouselList().nativeElement, 'show-details');
   }
 
+  onSeeAll(): void {
+    this.#renderer.removeClass(this.carouselList().nativeElement, 'show-details');
+  }
+
   private handleNavigation() {
     this.disableClick();
     this.cleanUpAnimationClasses();
