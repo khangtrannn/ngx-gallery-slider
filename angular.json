@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "aerphone-carousel": {
+    "ngx-gallery-slider": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/aerphone-carousel",
+            "outputPath": "dist/ngx-gallery-slider",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [],
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "aerphone-carousel:build:production"
+              "buildTarget": "ngx-gallery-slider:build:production"
             },
             "development": {
-              "buildTarget": "aerphone-carousel:build:development"
+              "buildTarget": "ngx-gallery-slider:build:development"
             }
           },
           "defaultConfiguration": "development"
