@@ -15,6 +15,7 @@
     transform: translateY(-50%);
     display: flex;
     justify-content: center;
+    transition: right 1.5s;
 
     img {
       object-fit: contain;
@@ -55,10 +56,6 @@
       letter-spacing: 3px;
       transition: background 0.5s;
       cursor: pointer;
-    }
-
-    .see-more:hover {
-      // background: #eee;
     }
   }
 
