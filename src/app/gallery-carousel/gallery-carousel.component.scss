@@ -297,15 +297,15 @@
       width: 90%;
     }
 
-    .carousel-list.show-details
-      ngx-gallery-slide:nth-child(2)
+    .carousel-list.show-details ngx-gallery-slide:nth-child(2) {
       .detail {
-      .specifications {
-        overflow: auto;
-      }
+        .specifications {
+          overflow: auto;
+        }
 
-      .title {
-        font-size: 2em;
+        .title {
+          font-size: 2em;
+        }
       }
     }
   }
@@ -313,7 +313,7 @@
   @media screen and (max-width: 767px) {
     /* mobile */
     .carousel {
-      height: 600px;
+      height: 100vh;
     }
 
     ngx-gallery-slide {
@@ -329,33 +329,33 @@
       width: 50%;
     }
 
-    .carousel .image-wrapper {
-      width: 40%;
+    .carousel-list .image-wrapper {
+      width: 45% !important;
     }
 
-    .carousel-list.show-details
-      ngx-gallery-slide:nth-child(2)
-      .detail {
-      backdrop-filter: blur(10px);
-      font-size: small;
+    .carousel-list.show-details {
+      ngx-gallery-slide:nth-child(2) {
+        .detail {
+          backdrop-filter: blur(10px);
+          font-size: small;
 
-      .des {
-        height: 100px;
-        overflow: auto;
-      }
+          .checkout {
+            display: flex;
+            width: max-content;
+            float: right;
+          }
+        }
 
-      .checkout {
-        display: flex;
-        width: max-content;
-        float: right;
+        .introduce .des {
+          height: 100px;
+          overflow: auto;
+        }
       }
     }
 
-    .carousel-list ngx-gallery-slide:nth-child(2) {
-      .introduce .des {
-        height: 100px;
-        overflow: auto;
-      }
+    ngx-gallery-slide:nth-child(2) .introduce .des {
+      height: 100px;
+      overflow: auto;
     }
   }
 }
